@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Muhammad Azri Fatihah Susanto",
   description:
-    "Fullstack Mobile App Engineer specializing in Flutter, Dart, Golang, and TypeScript. Passionate about creating innovative mobile applications with a focus on user experience and performance.",
+    "Fullstack Mobile Engineer specializing in Flutter, Dart & Golang. Building innovative apps with focus on UX and performance.",
   url: "https://azrifatihah.is-a.dev",
   ogImage: "https://azrifatihah.is-a.dev/og.jpg",
   links: {
