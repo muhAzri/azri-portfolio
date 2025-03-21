@@ -7,7 +7,7 @@ export const achievements: Achievement[] = [
     description:
       "Developed Edukita, an educational app for University Exam Preparation (UTBK/SNBT) using Flutter and Golang, winning first place in the Dicoding Idcamp 2024 competition.",
     date: "2024",
-    imageUrl: "/images/achievements/edukita.png",
+    imageUrl: "/images/achievements/edukita.webp",
     link: [
       {
         title: "Source Code on GitHub (Mobile App)",

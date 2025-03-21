@@ -15,7 +15,7 @@ export const projects: Project[] = [
       "Mobile App",
       "Google Sign-In",
     ],
-    imageUrl: "/images/projects/edukita.png",
+    imageUrl: "/images/projects/edukita.webp",
     githubUrl: "https://github.com/muhAzri/edukita",
     demoUrl:
       "https://play.google.com/store/apps/details?id=com.zrifapps.edukita",
@@ -32,7 +32,7 @@ export const projects: Project[] = [
     longDescription:
       "The backend for Edukita powers the mobile app by handling authentication, quiz management, and user progress tracking. User authentication is implemented exclusively with Google Sign-In via Firebase Authentication, ensuring a secure and frictionless login experience. Built with Golang, PostgreSQL, and Firebase for scalability and performance.",
     tags: ["Backend", "Education", "Quiz App", "API", "Google Sign-In"],
-    imageUrl: "/images/projects/edukita.png",
+    imageUrl: "/images/projects/edukita.webp",
     githubUrl: "https://github.com/muhAzri/EduKita",
     featured: true,
     technologies: ["Golang", "PostgreSQL", "Firebase", "Google Sign-In"],
