@@ -51,6 +51,8 @@ export function LatestAchievement() {
                 fill
                 className="object-cover"
                 priority={true}
+                sizes="(max-width: 768px) 100vw, 768px"
+                loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
               <div className="absolute left-6 top-6">
