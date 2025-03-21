@@ -9,11 +9,11 @@ import { LatestAchievement } from "@/components/home/latest-experience";
 import { FeaturedProjects } from "@/components/home/featured-project";
 
 export const metadata: Metadata = {
-  title: `Portfolio - Flutter & Golang Engineer | ${siteConfig.name}`,
+  title: `${siteConfig.name} | Mobile App Engineer`,
   description: siteConfig.description,
   keywords: [
     "flutter developer",
-    "mobile engineer",
+    "mobile app engineer",
     "golang",
     "portfolio",
     "fullstack developer",
