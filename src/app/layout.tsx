@@ -8,6 +8,7 @@ import { cn, ThemeProvider } from "@/lib/utils";
 import { siteConfig } from "../config/site";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -68,9 +69,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: siteConfig.url,
-  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -98,18 +96,25 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export default function RootLayout({}: RootLayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* Add this script for schema.org data */}
-        <script
+      <head />
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          inter.variable
+        )}
+      >
+        {/* Add Schema.org structured data script */}
+        <Script
+          id="schema-org-person"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Muhammad Azri",
+              name: siteConfig.name,
               url: siteConfig.url,
               jobTitle: "Fullstack Mobile App Engineer",
               knowsAbout: [
@@ -118,23 +123,27 @@ export default function RootLayout({}: RootLayoutProps) {
                 "Golang",
                 "TypeScript",
                 "Firebase",
+                "React",
+                "Next.js",
               ],
-              sameAs: [
-                // Add your social media profiles here
-                "https://github.com/YOUR-GITHUB",
-                "https://linkedin.com/in/YOUR-LINKEDIN",
-              ],
+              sameAs: [siteConfig.links.github, siteConfig.links.linkedin],
             }),
           }}
         />
-      </head>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          inter.variable
-        )}
-      >
-        {/* Rest of your component */}
+
+        <ThemeProvider
+          //@ts-expect-error asdsa
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="relative flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
