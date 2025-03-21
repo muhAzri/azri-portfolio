@@ -13,11 +13,12 @@ const groupedSkills: Record<SkillCategory, typeof skills> = {
   "Mobile Development": [],
   "Backend Development": [],
   "Frontend Development": [],
-  "Database": [],
-  "DevOps": [],
-  "Design": [],
-  "Language": [],
-  "Other": [],
+  Database: [],
+  DevOps: [],
+  Design: [],
+  "Program Language": [],
+  Language: [],
+  Other: [],
 };
 
 skills.forEach((skill) => {
@@ -34,7 +35,9 @@ export function SkillsShowcase() {
     <section className="bg-muted/50 py-16 md:py-24">
       <div className="container">
         <div className="flex flex-col items-center justify-center">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">Skills</h2>
+          <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+            Skills
+          </h2>
           <p className="mb-12 max-w-3xl text-center text-muted-foreground">
             Technologies and tools I&apos;ve worked with throughout my career.
           </p>
@@ -55,12 +58,7 @@ export function SkillsShowcase() {
                     <Badge
                       key={skill.id}
                       variant="secondary"
-                      className={cn(
-                        "px-3 py-1 text-sm",
-                        skill.level === "Advanced" && "bg-primary/20",
-                        skill.level === "Intermediate" && "bg-blue-500/20",
-                        skill.level === "Beginner" && "bg-muted"
-                      )}
+                      className={cn("px-3 py-1 text-sm", "bg-blue-500/20")}
                     >
                       {skill.name}
                     </Badge>

@@ -1,68 +1,35 @@
 import { Skill } from "@/lib/types/skill";
 
 export const skills: Skill[] = [
+  // Mobile Development
   {
     id: "flutter",
     name: "Flutter",
     level: "Intermediate",
     category: "Mobile Development",
-    iconUrl: "/images/skills/flutter.svg",
     years: 2,
   },
   {
-    id: "dart",
-    name: "Dart",
-    level: "Intermediate",
-    category: "Language",
-    iconUrl: "/images/skills/dart.svg",
-    years: 2,
-  },
-  {
-    id: "bloc",
-    name: "Bloc State Management",
+    id: "android_native",
+    name: "Android Native Development",
     level: "Intermediate",
     category: "Mobile Development",
-    iconUrl: "/images/skills/bloc.svg",
     years: 1,
   },
+
+  // Backend Development
   {
     id: "golang",
     name: "Golang",
     level: "Intermediate",
     category: "Backend Development",
-    iconUrl: "/images/skills/golang.svg",
     years: 1,
-  },
-  {
-    id: "gin",
-    name: "Gin Framework",
-    level: "Intermediate",
-    category: "Backend Development",
-    iconUrl: "/images/skills/gin.svg",
-    years: 1,
-  },
-  {
-    id: "postgresql",
-    name: "PostgreSQL",
-    level: "Intermediate",
-    category: "Database",
-    iconUrl: "/images/skills/postgresql.svg",
-    years: 1,
-  },
-  {
-    id: "english",
-    name: "English",
-    level: "Intermediate",
-    category: "Language",
-    iconUrl: "/images/skills/english.svg",
-    years: 4,
   },
   {
     id: "firebase",
     name: "Firebase",
     level: "Intermediate",
     category: "Backend Development",
-    iconUrl: "/images/skills/firebase.svg",
     years: 1,
   },
   {
@@ -70,23 +37,56 @@ export const skills: Skill[] = [
     name: "RESTful API",
     level: "Intermediate",
     category: "Backend Development",
-    iconUrl: "/images/skills/api.svg",
     years: 1,
   },
+
+  // Database
   {
-    id: "typescript",
-    name: "TypeScript",
-    level: "Beginner",
-    category: "Frontend Development",
-    iconUrl: "/images/skills/typescript.svg",
+    id: "postgresql",
+    name: "PostgreSQL",
+    level: "Intermediate",
+    category: "Database",
     years: 1,
   },
+
+  // Frontend Development
   {
     id: "nextjs",
     name: "Next.js",
     level: "Beginner",
     category: "Frontend Development",
-    iconUrl: "/images/skills/nextjs.svg",
     years: 1,
+  },
+
+  // Programming Languages
+  {
+    id: "dart",
+    name: "Dart",
+    level: "Intermediate",
+    category: "Program Language",
+    years: 2,
+  },
+  {
+    id: "kotlin",
+    name: "Kotlin",
+    level: "Intermediate",
+    category: "Program Language",
+    years: 1,
+  },
+  {
+    id: "typescript",
+    name: "TypeScript",
+    level: "Intermediate",
+    category: "Program Language",
+    years: 2,
+  },
+
+  // Human Languages
+  {
+    id: "english",
+    name: "English",
+    level: "Intermediate",
+    category: "Language",
+    years: 4,
   },
 ];

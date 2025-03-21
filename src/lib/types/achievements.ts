@@ -4,5 +4,10 @@ export type Achievement = {
   description: string;
   date: string;
   imageUrl?: string;
-  link?: string;
+  link?: AchievementLink[];
+};
+
+export type AchievementLink = {
+  title: string;
+  url: string;
 };

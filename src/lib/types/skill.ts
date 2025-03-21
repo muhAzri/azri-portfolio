@@ -5,6 +5,7 @@ export type SkillCategory =
   | "Database"
   | "DevOps"
   | "Design"
+  | "Program Language"
   | "Language"
   | "Other";
 

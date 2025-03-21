@@ -16,7 +16,6 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { ModeToggle } from "@/components/mode-toggle";
 import { mainNavItems } from "@/config/navigation";
 
 export function Header() {
@@ -93,7 +92,6 @@ export function Header() {
                 <span className="sr-only">LinkedIn</span>
               </Button>
             </Link>
-            <ModeToggle />
           </nav>
         </div>
       </div>

@@ -69,20 +69,20 @@ export function LatestAchievement() {
                 {latestAchievement.description}
               </CardDescription>
             </CardContent>
-            {latestAchievement.link && (
-              <CardFooter>
+            {latestAchievement.link?.map((item, index) => (
+              <CardFooter key={index}>
                 <Button asChild variant="outline" className="w-full">
                   <Link
-                    href={latestAchievement.link}
+                    href={item.url}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Learn More
+                    {item.title}
                     <Icons.externalLink className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </CardFooter>
-            )}
+            ))}
           </Card>
         </motion.div>
       </div>
