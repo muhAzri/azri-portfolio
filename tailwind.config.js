@@ -75,6 +75,9 @@ module.exports = {
         fontFamily: {
           sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
         },
+        extend: {
+          display: ["responsive"],
+        },
       },
     },
     plugins: [require("tailwindcss-animate")],
