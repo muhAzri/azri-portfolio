@@ -68,6 +68,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  alternates: {
+    canonical: siteConfig.url,
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -95,29 +98,43 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({}: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
+      <head>
+        {/* Add this script for schema.org data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Muhammad Azri",
+              url: siteConfig.url,
+              jobTitle: "Fullstack Mobile App Engineer",
+              knowsAbout: [
+                "Flutter",
+                "Dart",
+                "Golang",
+                "TypeScript",
+                "Firebase",
+              ],
+              sameAs: [
+                // Add your social media profiles here
+                "https://github.com/YOUR-GITHUB",
+                "https://linkedin.com/in/YOUR-LINKEDIN",
+              ],
+            }),
+          }}
+        />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           inter.variable
         )}
       >
-        <ThemeProvider
-          //@ts-expect-error asdsa
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="relative flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-        </ThemeProvider>
+        {/* Rest of your component */}
       </body>
     </html>
   );
