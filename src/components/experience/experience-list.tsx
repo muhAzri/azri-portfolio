@@ -86,14 +86,41 @@ export function ExperienceList() {
             <CardContent className="space-y-6">
               <p className="text-muted-foreground">{experience.description}</p>
 
-              <div>
-                <h3 className="mb-2 font-medium">Responsibilities:</h3>
-                <ul className="ml-6 list-disc space-y-1 text-muted-foreground">
-                  {experience.responsibilities.map((responsibility, i) => (
-                    <li key={i}>{responsibility}</li>
-                  ))}
-                </ul>
-              </div>
+              {/* Conditionally render Responsibilities for full-time roles */}
+              {experience.responsibilities && (
+                <div>
+                  <h3 className="mb-2 font-medium">Responsibilities:</h3>
+                  <ul className="ml-6 list-disc space-y-1 text-muted-foreground">
+                    {experience.responsibilities.map((responsibility, i) => (
+                      <li key={i}>{responsibility}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Conditionally render Projects for freelance roles */}
+              {experience.projects && (
+                <div>
+                  <h3 className="mb-2 font-medium">Projects:</h3>
+                  <ul className="space-y-4">
+                    {experience.projects.map((project, i) => (
+                      <li key={i} className="border-l-4 border-primary pl-4">
+                        <h4 className="font-semibold">{project.name}</h4>
+                        <p className="text-sm text-muted-foreground">
+                          {project.description}
+                        </p>
+                        <div className="mt-2 flex flex-wrap gap-2">
+                          {project.technologies.map((tech) => (
+                            <Badge key={tech} variant="secondary">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               <div>
                 <h3 className="mb-2 font-medium">Technologies Used:</h3>

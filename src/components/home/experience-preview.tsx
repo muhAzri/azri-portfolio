@@ -51,7 +51,7 @@ export function ExperiencePreview() {
           <div className="mb-6">
             <h4 className="mb-2 font-medium">Key Responsibilities:</h4>
             <ul className="ml-6 list-disc space-y-1 text-muted-foreground">
-              {latestExperience.responsibilities
+              {(latestExperience?.responsibilities ?? [])
                 .slice(0, 3)
                 .map((responsibility, index) => (
                   <li key={index}>{responsibility}</li>

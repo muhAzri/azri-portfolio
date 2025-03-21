@@ -80,6 +80,13 @@ export const skills: Skill[] = [
     category: "Program Language",
     years: 2,
   },
+  {
+    id: "go-lang",
+    name: "Golang",
+    level: "Intermediate",
+    category: "Program Language",
+    years: 1,
+  },
 
   // Human Languages
   {

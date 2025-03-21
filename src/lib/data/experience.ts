@@ -7,18 +7,26 @@ export const experiences: Experience[] = [
     position: "Hybrid Mobile App Engineer",
     location: "Jakarta, Indonesia",
     startDate: "Mar 2023",
-    endDate: "Present",
+    endDate: "Mar 2025",
     description:
-      "Working on developing fintech mobile applications using Flutter framework with a focus on performance and security.",
+      "Developed and enhanced fintech and smart building applications using hybrid mobile technologies while ensuring high performance and security.",
     responsibilities: [
-      "Developed Fintech Mobile App and contributed to major features",
-      "Implemented Customer Service functionality using Intercomm",
-      "Built Withdrawal feature with secure transaction processing",
-      "Developed EWA (Earned Wage Access) Withdrawals functionality",
-      "Created Company User Management systems",
+      "Developed fintech mobile applications using hybrid mobile technologies.",
+      "Implemented customer service functionality using Intercom.",
+      "Built secure withdrawal and Earned Wage Access (EWA) features.",
+      "Created a Visitor Pass feature for a smart building app.",
+      "Integrated video call support by collaborating with Android and iOS native developers.",
+      "Bridged ICT and HID systems for hybrid technology on mobile applications.",
+      "Integrated Google Sign-In and Apple Sign-In authentication.",
     ],
-    technologies: ["Flutter", "Dart", "Bloc", "RESTful API", "Intercomm"],
-    logoUrl: "/images/logos/teravin.png",
+    technologies: [
+      "Hybrid Mobile App",
+      "RESTful API",
+      "Intercom",
+      "Android Native",
+      "iOS Native",
+    ],
+    logoUrl: "/images/logos/teravin.jpg",
     companyUrl: "https://teravintech.com",
   },
   {
@@ -49,13 +57,26 @@ export const experiences: Experience[] = [
     startDate: "Jun 2023",
     endDate: "Present",
     description:
-      "Working as a freelance developer on various Flutter projects, meeting client requirements and delivering high-quality applications.",
-    responsibilities: [
-      "Developed a scheduled Android LockScreen Wallpaper Changer using Flutter",
-      "Integrated HTTP server connectivity for wallpaper fetching",
-      "Expanded existing wallpaper app with BLE Tracker functionality",
-      "Added Location Reporting capabilities to enhance user experience",
-      "Currently developing a Fullstack Mobile Hangout App to simplify social planning",
+      "Freelance developer delivering high-quality Flutter applications tailored to client requirements across various domains.",
+    projects: [
+      {
+        name: "Scheduled LockScreen Wallpaper Changer",
+        description:
+          "Developed an Android app that periodically changes the lock screen wallpaper using Flutter.",
+        technologies: ["Flutter", "Dart", "Android", "RESTful API"],
+      },
+      {
+        name: "Wallpaper App Enhancement",
+        description:
+          "Expanded an existing wallpaper app by integrating BLE Tracker functionality and location reporting.",
+        technologies: ["Flutter", "BLE", "Location Services", "Firebase"],
+      },
+      {
+        name: "WarungKita",
+        description:
+          "Developed and launched WarungKita, a Flutter-based mobile app that wraps the web version into a native Android experience and published it on Google Play.",
+        technologies: ["Flutter", "Dart", "WebView", "Google Play Console"],
+      },
     ],
     technologies: [
       "Flutter",

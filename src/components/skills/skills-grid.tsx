@@ -14,6 +14,7 @@ const groupedSkills: Record<SkillCategory, typeof allSkills> = {
   "Mobile Development": [],
   "Backend Development": [],
   "Frontend Development": [],
+  "Program Language": [],
   Database: [],
   DevOps: [],
   Design: [],

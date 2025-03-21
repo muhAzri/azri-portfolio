@@ -8,7 +8,7 @@ export const siteConfig = {
     github: "https://github.com/muhAzri",
     linkedin: "https://www.linkedin.com/in/muh-azri/",
     email: "muhammad.azri.f.s@gmail.com",
-    phone: "+62-8211-3740-274",
+    phone: "+62-8810-8130-3730",
   },
   metaTags: {
     keywords:
