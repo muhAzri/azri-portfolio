@@ -10,6 +10,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -148,6 +149,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <Header />
             <main className="flex-1">{children}</main>
             <Analytics />
+            <SpeedInsights />
             <Footer />
           </div>
         </ThemeProvider>
