@@ -44,10 +44,10 @@ export function Hero() {
 
           {/* Description */}
           <m.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ y: 10 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-            className="mb-10 max-w-2xl text-lg text-muted-foreground md:text-xl"
+            className="mb-10 max-w-2xl text-lg text-muted-foreground md:text-xl opacity-100"
           >
             I develop mobile applications and backend systems using modern
             technologies, focusing on high-performance, scalable, and
