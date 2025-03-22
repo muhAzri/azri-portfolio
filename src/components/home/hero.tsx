@@ -44,8 +44,9 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mb-10 max-w-2xl text-lg text-muted-foreground md:text-xl"
         >
-          I create mobile applications with Flutter and backend systems with Golang.
-          Passionate about building intuitive, high-performance apps that solve real problems.
+          I create mobile applications with Flutter and backend systems with
+          Golang. Passionate about building intuitive, high-performance apps
+          that solve real problems.
         </motion.p>
 
         <motion.div

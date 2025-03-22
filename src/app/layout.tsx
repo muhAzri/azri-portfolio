@@ -141,7 +141,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <ThemeProvider
           //@ts-expect-error asdsa
           attribute="class"
-          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
