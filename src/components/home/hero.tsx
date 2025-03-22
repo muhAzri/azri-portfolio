@@ -47,12 +47,11 @@ export function Hero() {
             initial={{ y: 10 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-            className="mb-10 max-w-2xl text-lg text-muted-foreground md:text-xl opacity-100"
+            className="mb-10 max-w-2xl text-lg text-muted-foreground md:text-xl"
           >
-            I develop mobile applications and backend systems using modern
-            technologies, focusing on high-performance, scalable, and
-            user-friendly solutions. Passionate about building intuitive digital
-            experiences that solve real-world problems.
+            I develop high-performance mobile apps and backend systems,
+            leveraging modern technologies to create scalable, user-centric
+            solutions.
           </m.p>
 
           {/* CTA Buttons (no animation for instant interactivity) */}
