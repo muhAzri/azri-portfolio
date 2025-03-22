@@ -72,9 +72,9 @@ export const experiences: Experience[] = [
         technologies: ["Flutter", "BLE", "Location Services", "Firebase"],
       },
       {
-        name: "WarungKita",
+        name: "KiraUntung",
         description:
-          "Developed and launched WarungKita, a Flutter-based mobile app that wraps the web version into a native Android experience and published it on Google Play.",
+          "Developed and launched KiraUntung, a Flutter-based mobile app that wraps the web version into a native Android experience and published it on Google Play.",
         technologies: ["Flutter", "Dart", "WebView", "Google Play Console"],
       },
     ],
