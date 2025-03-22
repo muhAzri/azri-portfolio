@@ -1,16 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  compiler: {
+    styledComponents: true,
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
-      if (
-        !config.optimization.splitChunks ||
-        config.optimization.splitChunks === false
-      ) {
-        config.optimization.splitChunks = {}; // Inisialisasi jika belum ada
-      }
-      config.optimization.splitChunks.maxSize = 10000;
+      config.optimization.splitChunks = {
+        chunks: "all",
+        maxSize: 200000, // 200KB (adjust based on your needs)
+      };
     }
     return config;
   },

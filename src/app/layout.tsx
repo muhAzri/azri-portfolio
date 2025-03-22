@@ -141,8 +141,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <ThemeProvider
           //@ts-expect-error asdsa
           attribute="class"
-          enableSystem
-          disableTransitionOnChange
         >
           <div className="relative flex min-h-screen flex-col">
             <Header />
