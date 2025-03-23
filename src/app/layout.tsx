@@ -106,6 +106,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           name="google-site-verification"
           content="BiyLL358czZR_kYdvoQF-pFFhBW-2J1pYUyuHLJ_DiY"
         />
+        <meta name="google-site-verification" content="EZm70dLzc4lNjM_NqwkuWGB1EEX90fH7krkljsZlZZ8" />
       </head>
       <body
         className={cn(
