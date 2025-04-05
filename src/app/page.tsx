@@ -5,8 +5,8 @@ import { Hero } from "@/components/home/hero";
 import { SkillsShowcase } from "@/components/home/skills-showcase";
 import { CTASection } from "@/components/home/cta-section";
 import { ExperiencePreview } from "@/components/home/experience-preview";
-import { LatestAchievement } from "@/components/home/latest-experience";
 import { FeaturedProjects } from "@/components/home/featured-project";
+import { LatestCertification } from "@/components/home/latest-certification";
 
 export const metadata: Metadata = {
   title: `${siteConfig.name} | Mobile App Engineer`,
@@ -50,7 +50,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <LatestAchievement />
+      <LatestCertification />
       <FeaturedProjects />
       <ExperiencePreview />
       <SkillsShowcase />
