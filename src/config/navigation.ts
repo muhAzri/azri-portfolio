@@ -47,6 +47,10 @@ export const mainNavItems: MainNavItem[] = [
     href: "/skills",
   },
   {
+    title: "Certifications",
+    href: "/certifications",
+  },
+  {
     title: "Contact",
     href: "/contact",
   },
