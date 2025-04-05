@@ -8,39 +8,48 @@ export function Biography() {
     <div className="space-y-6">
       <h2 className="text-3xl font-bold">Muhammad Azri Fatihah Susanto</h2>
       <p className="text-lg text-muted-foreground">
-        Fullstack Mobile App Engineer
+        Fullstack Mobile App Developer &bull; Android, Flutter, Golang
       </p>
 
       <div className="space-y-4">
         <p>
-          I am a Junior Fullstack Flutter Developer with professional experience
-          in hybrid mobile app development using Flutter. Over the past year, I
-          have dedicated myself to mastering the Flutter framework and Bloc
-          State Management, showcasing my commitment to continuous learning and
-          skill enhancement.
+          I&apos;m a passionate Fullstack Mobile App Developer with over two
+          years of experience building both cross-platform and native
+          applications. My journey began with Flutter, where I&apos;ve built and
+          shipped several products — including a national competition-winning
+          app — and has expanded into native Android development using Jetpack
+          Compose and Kotlin. In the near future, I plan to explore iOS native
+          development using Swift.
         </p>
 
         <p>
-          My passion for coding is reflected in my disciplined work ethic,
-          evident in the several applications and websites I&apos;ve developed using
-          Flutter, all available on my GitHub page and personal website. I
-          thrive on the challenge of expanding my knowledge base and skill set,
-          believing that ongoing growth is key to delivering valuable
-          contributions to any company I work for.
+          While mobile development is my primary focus, I&apos;m also actively
+          deepening my backend skills, particularly with Golang. I&apos;ve built
+          APIs and backend systems to support my mobile apps, giving me a strong
+          foundation in fullstack product development. I enjoy working on
+          end-to-end solutions — from crafting intuitive user interfaces to
+          designing efficient server-side logic.
         </p>
 
         <p>
-          I am known for my dedication, enthusiasm for learning, and a drive to
-          further improve my craft, eager to leverage my skills to create
-          innovative solutions and contribute meaningfully to the success of any
-          project or team.
+          I believe in mastering the full spectrum of mobile and backend
+          technologies — not just for flexibility, but to deliver better,
+          integrated experiences. My approach emphasizes high-quality code,
+          performance, and long-term maintainability.
         </p>
 
         <p>
-          Recently, I won the Dicoding Idcamp 2024 competition with my project
-          &quot;Edukita&quot;, an educational app designed for University Exam Preparation
-          (UTBK/SNBT). This project showcases my ability to develop complete
-          solutions using Flutter for the frontend and Golang for the backend.
+          One of my recent highlights is winning the Dicoding IDCamp 2024
+          competition with <strong>Edukita</strong>, an educational app designed
+          for university entrance exam preparation. I built the frontend with
+          Flutter and handled the backend using Golang, demonstrating my ability
+          to manage fullstack architecture.
+        </p>
+
+        <p>
+          I&apos;m always looking to grow, collaborate, and contribute to
+          impactful projects that challenge me and help me level up as a
+          well-rounded software engineer.
         </p>
       </div>
 
