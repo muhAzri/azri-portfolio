@@ -99,6 +99,30 @@ export const certifications: Certification[] = [
     category: "Mobile Development",
     image: "/images/certifications/jetpack-compose.webp",
   },
+  {
+    id: "android-intermediate",
+    title: "Belajar Pengembangan Aplikasi Android Intermediate",
+    issuer: "Dicoding Indonesia",
+    issueDate: "April 7, 2025",
+    expiryDate: "April 7, 2028",
+    verificationUrl: "https://www.dicoding.com/certificates/L4PQEJR04PO1",
+    description:
+      "Targeted at Android Developers looking to level up with advanced components. Topics include advanced UI, animations, localization, background services, media handling, maps & location, advanced testing, Firebase, and more.",
+    skills: [
+      "Advanced UI",
+      "Animation",
+      "Localization & Accessibility",
+      "Service & Background Tasks",
+      "Media Handling",
+      "Geo Location & Google Maps",
+      "Advanced Testing",
+      "Advanced Database",
+      "Firebase Integration",
+    ],
+    duration: "150 hours",
+    category: "Mobile Development",
+    image: "/images/certifications/android-intermediate.webp",
+  },
 ];
 
 // Helper function to get latest certification
