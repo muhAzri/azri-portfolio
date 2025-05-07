@@ -39,4 +39,32 @@ export const projects: Project[] = [
     date: "2024",
     category: "backend",
   },
+  {
+    id: "floating-timer",
+    title: "Floating Timer",
+    description:
+      "Minimalist popup timer with Picture-in-Picture support built using Kotlin and Jetpack Compose.",
+    longDescription:
+      "Floating Timer is a lightweight and distraction-free popup timer app for Android. Built with Kotlin and Jetpack Compose, it features Picture-in-Picture (PiP) support so the timer can float above other apps—perfect for multitasking during workouts, studying, cooking, or Pomodoro sessions. The app supports dark mode, sound alerts, offline usage, and is designed to be battery-efficient and lightweight.",
+    tags: [
+      "Timer",
+      "Productivity",
+      "Popup",
+      "PiP",
+      "Focus Tool",
+      "Android App",
+    ],
+    imageUrl: "/images/projects/floating-timer.webp",
+    demoUrl:
+      "https://play.google.com/store/apps/details?id=com.zrifapps.floatingtimer",
+    featured: false,
+    technologies: [
+      "Kotlin",
+      "Jetpack Compose",
+      "Android",
+      "Picture-in-Picture",
+    ],
+    date: "2025",
+    category: "mobile",
+  },
 ];
