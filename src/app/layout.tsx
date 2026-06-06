@@ -1,156 +1,93 @@
-// app/layout.tsx
-import { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
-
+import type { Metadata, Viewport } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import { SITE_URL, profile, socials } from "@/lib/content";
 import "./globals.css";
-import { cn, ThemeProvider } from "@/lib/utils";
 
-import { siteConfig } from "../config/site";
-import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
-import Script from "next/script";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
-
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
-  width: "device-width",
-  initialScale: 1,
-};
+const title = `${profile.name} — ${profile.role}`;
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
+    default: title,
+    template: `%s · ${profile.shortName}`,
   },
-  description: siteConfig.description,
-  keywords: siteConfig.metaTags.keywords.split(", "),
-  authors: [
-    {
-      name: siteConfig.metaTags.author,
-      url: siteConfig.url,
-    },
+  description: profile.summary,
+  applicationName: `${profile.shortName} — Portfolio`,
+  authors: [{ name: profile.name, url: socials.github }],
+  creator: profile.name,
+  keywords: [
+    "Muhammad Azri Fatihah Susanto",
+    "Mobile Developer",
+    "Flutter Developer",
+    "Android Developer",
+    "iOS Developer",
+    "Kotlin Multiplatform",
+    "React Native",
+    "Jakarta",
+    "Zrif Apps",
   ],
-  creator: siteConfig.metaTags.author,
+  alternates: { canonical: "/" },
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteConfig.url,
-    title: siteConfig.name,
-    description: siteConfig.description,
-    siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
+    type: "profile",
+    url: SITE_URL,
+    title,
+    description: profile.tagline,
+    siteName: profile.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [siteConfig.ogImage],
-    creator: "@muhAzri", // Replace with your Twitter handle if applicable
+    title,
+    description: profile.tagline,
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
-      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
-      {
-        url: "/android-chrome-192x192.png",
-        type: "image/png",
-        sizes: "192x192",
-      },
-      {
-        url: "/android-chrome-512x512.png",
-        type: "image/png",
-        sizes: "512x512",
-      },
-    ],
-    apple: "/apple-touch-icon.png",
-    shortcut: "/favicon-16x16.png",
-  },
-  manifest: "/site.webmanifest",
-  metadataBase: new URL(siteConfig.url),
+  robots: { index: true, follow: true },
 };
 
-interface RootLayoutProps {
-  children: React.ReactNode;
-}
+export const viewport: Viewport = {
+  themeColor: "#08090d",
+  colorScheme: "dark",
+};
 
-export default function RootLayout({ children }: RootLayoutProps) {
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  jobTitle: profile.role,
+  email: profile.email,
+  url: SITE_URL,
+  image: `${SITE_URL}${profile.photo}`,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Jakarta",
+    addressCountry: "ID",
+  },
+  sameAs: [socials.github, socials.linkedin, socials.googlePlay],
+  knowsAbout: [
+    "Flutter",
+    "Kotlin",
+    "Swift",
+    "Kotlin Multiplatform",
+    "React Native",
+    "Mobile Development",
+  ],
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <meta
-          name="google-site-verification"
-          content="BiyLL358czZR_kYdvoQF-pFFhBW-2J1pYUyuHLJ_DiY"
-        />
-        <meta name="google-site-verification" content="EZm70dLzc4lNjM_NqwkuWGB1EEX90fH7krkljsZlZZ8" />
-      </head>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          inter.variable
-        )}
-      >
-        {/* Add Schema.org structured data script */}
-        <Script
-          id="schema-org-person"
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    >
+      <body className="min-h-dvh">
+        <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: siteConfig.name,
-              url: siteConfig.url,
-              jobTitle: "Fullstack Mobile App Engineer",
-              knowsAbout: [
-                "Flutter",
-                "Dart",
-                "Golang",
-                "TypeScript",
-                "Firebase",
-                "React",
-                "Next.js",
-              ],
-              sameAs: [siteConfig.links.github, siteConfig.links.linkedin],
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-
-        <ThemeProvider
-          //@ts-expect-error asdsa
-          attribute="class"
-        >
-          <div className="relative flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Analytics />
-            <SpeedInsights />
-            <Footer />
-          </div>
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );
