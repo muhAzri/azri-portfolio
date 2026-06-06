@@ -1,160 +1,118 @@
-/* app/globals.css */
 @import "tailwindcss";
-@config "../../tailwind.config.js";
 
-@media (max-width: 768px) {
-  .container {
-    padding: 12px;
+@theme {
+  /* Dark, professional palette */
+  --color-bg: #08090d;
+  --color-surface: #0f1117;
+  --color-surface-2: #161922;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-strong: rgba(255, 255, 255, 0.14);
+
+  --color-fg: #e8eaf0;
+  --color-muted: #a2a9b8;
+  --color-subtle: #6b7280;
+
+  --color-accent: #7c6cff;
+  --color-accent-2: #22d3ee;
+  --color-accent-soft: rgba(124, 108, 255, 0.14);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --radius-card: 1.25rem;
+  --shadow-glow: 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 30px 80px -40px rgba(124, 108, 255, 0.45);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+::selection {
+  background: rgba(124, 108, 255, 0.3);
+  color: #fff;
+}
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+/* Gradient text helper */
+.text-gradient {
+  background: linear-gradient(110deg, #fff 10%, #b6aaff 45%, #6ee7ff 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+/* Subtle dotted grid backdrop */
+.bg-grid {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px
+  );
+  background-size: 26px 26px;
+}
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+/* Frosted nav / cards */
+.glass {
+  background: rgba(15, 17, 23, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+/* Animated aurora blobs used behind the hero */
+.aurora {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: drift 16s ease-in-out infinite alternate;
+}
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+@keyframes drift {
+  from {
+    transform: translate(0, 0) scale(1);
   }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+  to {
+    transform: translate(40px, -30px) scale(1.15);
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+/* Marquee for the skills strip */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
   }
-  body {
-    @apply bg-background text-foreground;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-bold tracking-tight;
+  to {
+    transform: translateX(-50%);
   }
 }
-
-/* Custom animations */
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.animate-marquee {
+  animation: marquee 32s linear infinite;
 }
 
-.animate-float {
-  animation: float 5s ease-in-out infinite;
+/* Card lift on hover */
+.card-hover {
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: hsl(var(--background));
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted));
-  border-radius: 6px;
-  border: 3px solid hsl(var(--background));
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground));
-}
-
-/* Image hover effects */
-.image-hover-zoom {
-  overflow: hidden;
-}
-
-.image-hover-zoom img {
-  transition: transform 0.5s ease;
-}
-
-.image-hover-zoom:hover img {
-  transform: scale(1.05);
-}
-
-/* Page transitions */
-.page-transition-enter {
-  opacity: 0;
-  transform: translateY(10px);
-}
-.page-transition-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.3s, transform 0.3s;
-}
-.page-transition-exit {
-  opacity: 1;
-  transform: translateY(0);
-}
-.page-transition-exit-active {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.3s, transform 0.3s;
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-line-strong);
 }
