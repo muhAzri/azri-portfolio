@@ -1,7 +1,7 @@
 /** All portfolio content, sourced from resume.tex. Single source of truth. */
 
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://azrifatihah.dev"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://azrifatihah.is-a.dev"
 ).replace(/\/$/, "");
 
 export const profile = {
