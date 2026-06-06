@@ -25,8 +25,8 @@ export function Resume() {
       <div className="mx-auto max-w-6xl px-5 py-24">
         <SectionHeading
           eyebrow="Résumé"
-          title="Straight from LaTeX"
-          blurb="My CV is maintained in LaTeX and rendered to PDF. Preview it here, zoom in full screen, or grab the file."
+          title="The full résumé"
+          blurb="Preview my CV here, open it full screen to zoom, or download the PDF."
         />
 
         <Reveal>
