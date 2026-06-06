@@ -1,0 +1,202 @@
+%-------------------------
+% Resume in LaTeX
+% Author: Muhammad Azri Fatihah Susanto
+%-------------------------
+
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{multicol}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins (tightened to fit one page)
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.75in}
+\addtolength{\textheight}{1.5in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting (tightened)
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1 \vspace{-2pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Muhammad Azri Fatihah Susanto} \\ \vspace{2pt}
+    \small Mobile Developer -- Flutter / Android / iOS \\ \vspace{2pt}
+    \small +62 887 0967 2250 $|$
+    \href{mailto:muhammad.azri.f.s@gmail.com}{muhammad.azri.f.s@gmail.com} $|$
+    Jakarta, Indonesia \\
+    \href{https://linkedin.com/in/muhammad-azri-fatihah-susanto}{linkedin.com/in/muhammad-azri-fatihah-susanto} $|$
+    \href{https://github.com/muhAzri}{github.com/muhAzri} $|$
+    \href{https://play.google.com/store/apps/developer?id=Zrif+Apps}{Google Play: Zrif Apps}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+    Mobile developer with 2+ years of cross-platform delivery experience and Dicoding Expert-level certifications across Flutter, Android (Kotlin), iOS (Swift), and React. Shipped production apps on Google Play under the Zrif Apps developer profile, including a Dicoding IdCamp 2024 winning project. Active External Code Reviewer for Flutter and iOS submissions at Dicoding Indonesia.
+    }}
+\end{itemize}
+
+%-----------PROFESSIONAL EXPERIENCE-----------
+\section{Professional Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {External Code Reviewer}{Sept 2025 -- Present}
+      {Dicoding Indonesia (Part-Time)}{}
+      \resumeItemListStart
+        \resumeItem{Review Flutter and iOS (Swift) submissions across Dicoding's professional mobile learning paths, evaluating architecture, state management, dependency injection, and test coverage}
+        \resumeItem{Deliver written technical feedback in Bahasa Indonesia, focusing on actionable improvements in code structure, naming, and idiomatic platform usage}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Mobile App Engineer}{Mar 2023 -- Mar 2025}
+      {Teravin Technovation}{}
+      \resumeItemListStart
+        \resumeItem{Delivered two consecutive cross-platform mobile vendor engagements ($\sim$1-year cycle each) for enterprise clients, working as junior developer alongside a senior mobile lead on a small team; codebase used Redux and React Context API for state management with a modular, separation-of-concerns structure across feature areas}
+        \resumeItem{\textbf{Fintech / Digital Banking App}: built 4 feature areas spanning \textasciitilde{}24 screens and 14 bottom sheets -- User \& Company Management (invite/remove employees, group creation, role changes), Early Wage Access (corporate-admin and employee variants), Withdrawal Flow (including withdrawal-account setup), and multi-role Transaction History (individual / employee / corporate) with filters by type, currency, direction, status, date, and group wallet}
+        \resumeItem{Implemented a reusable Multi-Factor Authentication component supporting biometrics, Approove, and email/phone OTP, reused across EWA and withdrawal flows; integrated Intercom SDK for in-app customer support}
+        \resumeItem{\textbf{Smart Building / VMS App}: contributed to the user-facing mobile app within a multi-app ecosystem (user app + kiosk app + back-panel configurator handled by separate native teams); features included QR-based visitor flows, real-time messaging/notifications, and smart-lock / gate access via NFC and BLE}
+        \resumeItem{Implemented the React Native bridge layer for the ICT access-control vendor protocol (NFC/BLE) consuming the vendor SDK held by the native Android team -- pair-programmed and iterated on bridge contracts, testing, and debugging feedback with the native team under tech-lead supervision}
+        \resumeItem{Integrated Linphone-based VoIP and video calling on the React Native side -- consumed native-exposed APIs (SDK init, login, place / accept / reject call) and validated end-to-end audio and video call flows in collaboration with the native team}
+        \resumeItem{Implemented OAuth2 social sign-in (Google \& Apple) with JWT session management on the mobile side}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Mobile (Primary)}{: Flutter / Dart, Android / Kotlin (Jetpack Compose), iOS / Swift (SwiftUI, UIKit)} \\
+     \textbf{State Management}{: BLoC, Riverpod, Redux} \\
+     \textbf{Backend \& Data}{: Golang, PostgreSQL, Firebase, Supabase, RESTful APIs} \\
+     \textbf{Tooling}{: Git, CI/CD (GitHub Actions, Codemagic), SwiftLint, Play Store deployment}
+    }}
+\end{itemize}
+
+%-----------NOTABLE PROJECTS-----------
+\section{Notable Projects}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{EduKita -- Educational Platform} $|$ \emph{Flutter, Golang, PostgreSQL}}{\textbf{Winner -- Dicoding IdCamp 2024}}
+      \resumeItemListStart
+        \resumeItem{Built a full-stack UTBK/SNBT exam preparation app with Google Sign-In, progress tracking, and interactive learning modules; Flutter client uses BLoC state management with Clean Architecture, paired with a Golang + PostgreSQL backend designed and built from scratch}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{PokedexPocket -- iOS Native App} $|$ \emph{Swift, SwiftUI, RxSwift, Alamofire, Swinject, SwiftData}}{\textbf{Open-source on GitHub}}
+      \resumeItemListStart
+        \resumeItem{Open-source iOS app (\href{https://github.com/muhAzri/PokedexPocket}{github.com/muhAzri/PokedexPocket}) implementing Clean Architecture across Presentation / Domain / Data layers with Swinject for dependency injection and Repository Pattern for data access}
+        \resumeItem{SwiftUI + RxSwift reactive view models, SwiftData persistence for favorites, debounced search, infinite scroll, and two-tier image caching (50MB memory / 200MB disk); GitHub Actions CI with SwiftLint enforcement}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{CashFlow -- Personal Finance Manager} $|$ \emph{Flutter, Dart}}{\textbf{Published on Google Play}}
+      \resumeItemListStart
+        \resumeItem{Offline-first personal finance app with BLoC state management, multi-currency support (7 currencies), encrypted local storage, budget alerts, and analytics dashboard -- zero-backend, privacy-first architecture}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Floating Timer} $|$ \emph{Kotlin, Jetpack Compose}}{\textbf{Published on Google Play}}
+      \resumeItemListStart
+        \resumeItem{Android utility app using Picture-in-Picture overlay, demonstrating Jetpack Compose with platform-specific Android APIs}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{\textit{Dicoding Indonesia -- Expert level (highest tier) across all four professional mobile learning paths.}}}
+\end{itemize}
+\vspace{-8pt}
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=0.15in, label={}, nosep]
+    \small{\item{Flutter Developer Expert (Apr 2024)}}
+    \small{\item{Android Developer Expert (Jul 2025)}}
+    \columnbreak
+    \small{\item{iOS Developer Expert (Aug 2025)}}
+    \small{\item{React Developer Expert (Aug 2025)}}
+\end{itemize}
+\end{multicols}
+
+%-----------EDUCATION-----------
+\section{Education}
+\begin{itemize}[leftmargin=0.15in, label={}, nosep]
+    \small{\item{\textbf{Telkom University, Bandung} -- B.S. Informatics Engineering, Distance Learning Program (Starting Sept 2026)}}
+    \small{\item{SMAN 15 Kota Bekasi -- High School Diploma, Natural Sciences}}
+\end{itemize}
+
+%-----------LANGUAGES-----------
+\section{Languages}
+\begin{itemize}[leftmargin=0.15in, label={}, nosep]
+    \small{\item{Indonesian (Native), English (Reading \& Writing: Proficient, Speaking \& Listening: Conversational)}}
+\end{itemize}
+
+%-------------------------------------------
+\end{document}

@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { motion, useReducedMotion } from "motion/react";
-import { ArrowDown, MapPin } from "lucide-react";
+import { ArrowDown, Download, MapPin } from "lucide-react";
 import { GitHubIcon, LinkedInIcon, GooglePlayIcon } from "./icons";
-import { profile, socials, stats } from "@/lib/content";
+import { profile, resumeUrl, socials, stats } from "@/lib/content";
 
 export function Hero() {
   const reduce = useReducedMotion();
@@ -65,6 +65,14 @@ export function Hero() {
             >
               View my work
               <ArrowDown className="size-4" />
+            </a>
+            <a
+              href={resumeUrl}
+              download="Muhammad-Azri-Fatihah-Susanto-CV.pdf"
+              className="inline-flex items-center gap-2 rounded-full border border-line-strong px-5 py-3 text-sm font-semibold text-fg transition-colors hover:bg-surface-2"
+            >
+              <Download className="size-4" />
+              Download CV
             </a>
             <div className="flex items-center gap-2">
               <IconLink href={socials.github} label="GitHub">

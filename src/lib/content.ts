@@ -256,10 +256,14 @@ export const languages = [
   { name: "English", level: "Proficient (reading & writing), Conversational" },
 ];
 
+/** Compiled CV (from cv/resume.tex). Replace public/resume.pdf to update. */
+export const resumeUrl = "/resume.pdf";
+
 export const nav = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
+  { label: "Résumé", href: "#resume" },
   { label: "Contact", href: "#contact" },
 ] as const;
