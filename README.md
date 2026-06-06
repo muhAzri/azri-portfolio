@@ -38,6 +38,26 @@ Everything (profile, experience, projects, skills, certifications, education) is
 in **`src/lib/content.ts`** — edit there and every section updates. Swap the
 hero photo by replacing `public/azri.webp` and pointing `profile.photo` at it.
 
+## CV / Résumé
+
+The CV is authored in **LaTeX** (`cv/resume.tex`) and served as a PDF that the
+Résumé section previews (with full-screen zoom + download).
+
+To update it:
+
+1. Edit `cv/resume.tex`.
+2. Compile to PDF and save it as **`public/resume.pdf`** (the served file). Any
+   LaTeX toolchain works — e.g. [Overleaf](https://overleaf.com) (download the
+   PDF), or locally:
+   ```bash
+   pdflatex -output-directory=public -jobname=resume cv/resume.tex
+   # or: tectonic cv/resume.tex --outdir public  (then rename to resume.pdf)
+   ```
+3. Commit both `cv/resume.tex` and `public/resume.pdf`.
+
+> `public/resume.pdf` ships with a placeholder until you drop in the real
+> compiled CV. (No LaTeX is run at build time — Vercel has no TeX install.)
+
 ## Structure
 
 ```
@@ -48,10 +68,12 @@ src/
     globals.css           dark theme tokens + utilities
     opengraph-image.tsx   dynamic OG image (next/og)
     icon.svg sitemap.ts robots.ts
-  components/             Navbar, Hero, About, Experience, Projects,
-                         Skills, Certifications, Education, Contact, Footer,
-                         Reveal (motion), SectionHeading, icons
+  components/             Navbar, Hero, About, Experience, Projects, Skills,
+                         Certifications, Education, Resume, Contact, Footer,
+                         Reveal (motion), SectionHeading, LogoMark, icons
   lib/content.ts         all portfolio content (single source of truth)
+cv/resume.tex            LaTeX CV source
+public/resume.pdf        compiled CV served by the Résumé section
 ```
 
 ## SEO
