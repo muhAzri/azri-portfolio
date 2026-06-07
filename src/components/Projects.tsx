@@ -27,9 +27,17 @@ export function Projects() {
 }
 
 function ProjectCard({ project }: { project: Project }) {
-  const Wrapper = project.href ? "a" : "div";
-  const linkProps = project.href
-    ? { href: project.href, target: "_blank", rel: "noopener noreferrer" }
+  const links =
+    project.links ??
+    (project.href
+      ? [{ href: project.href, label: project.hrefLabel ?? "Visit site" }]
+      : []);
+  // Keep the whole card clickable when there's a single destination;
+  // multiple links need separate anchors (no nested <a>), so use a div.
+  const singleLink = links.length === 1 ? links[0] : null;
+  const Wrapper = singleLink ? "a" : "div";
+  const linkProps = singleLink
+    ? { href: singleLink.href, target: "_blank", rel: "noopener noreferrer" }
     : {};
 
   return (
@@ -47,7 +55,7 @@ function ProjectCard({ project }: { project: Project }) {
         >
           {project.badge}
         </span>
-        {project.href && (
+        {singleLink && (
           <ArrowUpRight className="size-5 text-subtle transition-colors group-hover:text-fg" />
         )}
       </div>
@@ -66,11 +74,28 @@ function ProjectCard({ project }: { project: Project }) {
         ))}
       </div>
 
-      {project.hrefLabel && (
+      {singleLink ? (
         <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent">
-          {project.hrefLabel}
+          {singleLink.label}
           <ArrowUpRight className="size-4" />
         </span>
+      ) : (
+        links.length > 0 && (
+          <div className="mt-4 flex flex-wrap gap-4">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/link inline-flex items-center gap-1 text-sm font-medium text-accent"
+              >
+                {l.label}
+                <ArrowUpRight className="size-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+              </a>
+            ))}
+          </div>
+        )
       )}
     </Wrapper>
   );

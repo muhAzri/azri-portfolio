@@ -139,6 +139,7 @@ export type Project = {
   tags: string[];
   href?: string;
   hrefLabel?: string;
+  links?: { href: string; label: string }[];
 };
 
 export const projects: Project[] = [
@@ -151,6 +152,13 @@ export const projects: Project[] = [
     tags: ["Kotlin Multiplatform", "Compose", "Next.js", "Supabase"],
     href: "https://www.goservis.my.id/",
     hrefLabel: "Visit site",
+    links: [
+      { href: "https://www.goservis.my.id/", label: "Visit site" },
+      {
+        href: "https://play.google.com/store/apps/details?id=com.zrifapps.goservice",
+        label: "Google Play",
+      },
+    ],
   },
   {
     name: "EduKita — Educational Platform",
