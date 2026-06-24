@@ -51,6 +51,16 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
+    role: "Flutter Developer",
+    company: "Koda Tech Academy",
+    period: "Jun 2026 — Present",
+    type: "Full-Time",
+    points: [
+      "Developing cross-platform Flutter applications for clients as part of an IT consulting team.",
+    ],
+    tags: ["Flutter", "Dart"],
+  },
+  {
     role: "External Code Reviewer",
     company: "Dicoding Indonesia",
     period: "Sept 2025 — Present",
