@@ -112,7 +112,7 @@ export function Hero() {
             />
           </div>
           <div className="absolute -bottom-4 -left-4 rounded-2xl border border-line bg-surface-2/90 px-4 py-3 backdrop-blur">
-            <p className="font-mono text-[11px] text-subtle">currently building</p>
+            <p className="font-mono text-[11px] text-subtle">latest release</p>
             <p className="text-sm font-semibold text-fg">GoService · KMP</p>
           </div>
         </motion.div>

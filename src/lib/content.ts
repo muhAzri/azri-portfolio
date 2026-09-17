@@ -16,7 +16,7 @@ export const profile = {
   tagline:
     "I build cross-platform mobile apps that ship — from fintech and smart-building products to award-winning learning platforms.",
   summary:
-    "Mobile developer with 2+ years of cross-platform delivery experience and Dicoding Expert-level certifications across Flutter, Android (Kotlin), iOS (Swift), and React. I ship production apps on Google Play under the Zrif Apps profile — including a Dicoding IdCamp 2024 winning project — and review professional Flutter & iOS submissions as an External Code Reviewer at Dicoding Indonesia.",
+    "Mobile developer with 3+ years of cross-platform delivery experience and Dicoding Expert-level certifications across Flutter, Android (Kotlin), iOS (Swift), and React. I ship production apps on Google Play under the Zrif Apps profile — including a Dicoding IdCamp 2024 winning project — and review professional Flutter & iOS submissions as an External Code Reviewer at Dicoding Indonesia.",
 } as const;
 
 export const socials = {
@@ -27,10 +27,10 @@ export const socials = {
 } as const;
 
 export const stats = [
-  { value: "2+", label: "Years shipping mobile" },
+  { value: "3+", label: "Years shipping mobile" },
   { value: "4", label: "Dicoding Expert certs" },
   { value: "1", label: "IdCamp 2024 win" },
-  { value: "4", label: "Apps on Google Play" },
+  { value: "5", label: "Apps on Google Play" },
 ] as const;
 
 export const highlights = [
@@ -56,9 +56,16 @@ export const experiences: Experience[] = [
     period: "Jun 2026 — Present",
     type: "Full-Time",
     points: [
-      "Developing cross-platform Flutter applications for clients as part of an IT consulting team.",
+      "Developed and maintained a multiplatform C2C marketplace app in Flutter, structured with Clean Architecture (domain-data-presentation) and BLoC/Cubit across 17+ feature modules, as part of an IT consulting team.",
+      "Built a real-time in-app chat system on Supabase Realtime with optimistic message delivery, zoomable image attachments, read receipts, and day-grouped history.",
+      "Designed the full listing lifecycle (create, edit, draft, publish, mark-as-sold, delete) with HydratedBloc draft persistence, seller stats, a paginated wishlist, and a post-transaction review/rating system.",
+      "Implemented a trust & safety layer covering ID/face-photo verification, a badge/achievement system, and block/report moderation tooling.",
+      "Integrated RESTful APIs (Dio) across auth, listings, chat, location, and notifications with token-based sessions, auto-refresh, and forced re-login on expiry; built a GPS-driven address system (Geolocator, Google Maps SDK) and deep linking via Android App Links / iOS Universal Links.",
+      "Managed multi-environment builds (development, staging, production) with distinct flavors, bundle IDs, and signing keystores, plus bilingual (ID/EN) localization and versioned releases.",
+      "Built a community feature with join/leave flows, role-based views (non-member, member, admin), membership approval, a community feed combining posts and listings, threaded comments, and moderation tools.",
+      "Delivered a listing \"Boost\" feature with in-app purchase support via Google Play Billing (Android) and Apple StoreKit (iOS), including backend-verified purchase activation and purchase-state recovery.",
     ],
-    tags: ["Flutter", "Dart"],
+    tags: ["Flutter", "BLoC/Cubit", "Supabase Realtime", "Clean Architecture", "Dio", "IAP"],
   },
   {
     role: "External Code Reviewer",
@@ -260,7 +267,7 @@ export const education = [
   {
     school: "Telkom University, Bandung",
     detail: "B.S. Informatics Engineering — Distance Learning Program",
-    period: "Starting Sept 2026",
+    period: "Sept 2026 – Present",
   },
   {
     school: "SMAN 15 Kota Bekasi",
