@@ -43,6 +43,9 @@ export const metadata: Metadata = {
     description: profile.tagline,
   },
   robots: { index: true, follow: true },
+  verification: {
+    google: "EZm70dLzc4lNjM_NqwkuWGB1EEX90fH7krkljsZlZZ8",
+  },
 };
 
 export const viewport: Viewport = {
