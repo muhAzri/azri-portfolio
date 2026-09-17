@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Download, ExternalLink, Expand, FileText, X } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
-import { profile, resumeUrl } from "@/lib/content";
+import { profile, resumeFilename, resumeUrl } from "@/lib/content";
 
 export function Resume() {
   const [open, setOpen] = useState(false);
@@ -35,7 +35,7 @@ export function Resume() {
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line px-4 py-3">
               <span className="inline-flex items-center gap-2 font-mono text-xs text-subtle">
                 <FileText className="size-4 text-accent" />
-                resume.pdf
+                {resumeFilename}
               </span>
               <div className="flex items-center gap-2">
                 <button
@@ -57,7 +57,7 @@ export function Resume() {
                 </a>
                 <a
                   href={resumeUrl}
-                  download="Muhammad-Azri-Fatihah-Susanto-CV.pdf"
+                  download={resumeFilename}
                   className="inline-flex items-center gap-1.5 rounded-lg bg-fg px-3 py-1.5 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
                 >
                   <Download className="size-4" />
@@ -99,7 +99,7 @@ export function Resume() {
             <div className="flex items-center gap-2">
               <a
                 href={resumeUrl}
-                download="Muhammad-Azri-Fatihah-Susanto-CV.pdf"
+                download={resumeFilename}
                 className="inline-flex items-center gap-1.5 rounded-lg bg-fg px-3 py-1.5 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
               >
                 <Download className="size-4" />

@@ -283,6 +283,7 @@ export const languages = [
 
 /** Compiled CV (from cv/resume.tex). Replace public/resume.pdf to update. */
 export const resumeUrl = "/resume.pdf";
+export const resumeFilename = "Muhammad-Azri-Fatihah-Susanto-CV.pdf";
 
 export const nav = [
   { label: "About", href: "#about" },
