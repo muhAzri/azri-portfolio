@@ -1,10 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Download, ExternalLink, Expand, FileText, X } from "lucide-react";
+import { Download, ExternalLink, Expand, X } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 import { Reveal } from "./Reveal";
 import { profile, resumeFilename, resumeUrl } from "@/lib/content";
+
+const btnGhost =
+  "inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-line-strong px-5 py-3 text-sm font-semibold text-fg transition-colors hover:bg-surface-2 active:scale-[0.98]";
+const btnSolid =
+  "inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-fg px-5 py-3 text-sm font-semibold text-bg transition-transform duration-200 hover:-translate-y-px active:scale-[0.98]";
 
 export function Resume() {
   const [open, setOpen] = useState(false);
@@ -21,102 +26,69 @@ export function Resume() {
   }, [open]);
 
   return (
-    <section id="resume" className="border-t border-line bg-surface/30">
-      <div className="mx-auto max-w-6xl px-5 py-24">
-        <SectionHeading
-          eyebrow="Résumé"
-          title="The full résumé"
-          blurb="Preview my CV here, open it full screen to zoom, or download the PDF."
-        />
+    <section id="resume" className="border-y border-line bg-surface">
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 md:py-32 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+        <div className="lg:self-center">
+          <SectionHeading
+            title="The full résumé"
+            blurb="Preview it here, open it full screen to zoom, or download the PDF."
+          />
+          <Reveal delay={0.1} className="mt-8 flex flex-wrap gap-3">
+            <a href={resumeUrl} download={resumeFilename} className={btnSolid}>
+              <Download className="size-4" />
+              Download PDF
+            </a>
+            <a href={resumeUrl} target="_blank" rel="noopener noreferrer" className={btnGhost}>
+              <ExternalLink className="size-4" />
+              Open
+            </a>
+            <button
+              type="button"
+              onClick={() => setOpen(true)}
+              className={`${btnGhost} hidden md:inline-flex`}
+            >
+              <Expand className="size-4" />
+              Full screen
+            </button>
+          </Reveal>
+        </div>
 
-        <Reveal>
-          <div className="overflow-hidden rounded-card border border-line bg-surface">
-            {/* toolbar */}
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line px-4 py-3">
-              <span className="inline-flex items-center gap-2 font-mono text-xs text-subtle">
-                <FileText className="size-4 text-accent" />
-                {resumeFilename}
-              </span>
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => setOpen(true)}
-                  className="hidden items-center gap-1.5 rounded-lg border border-line px-3 py-1.5 text-sm text-muted transition-colors hover:text-fg md:inline-flex"
-                >
-                  <Expand className="size-4" />
-                  Full screen
-                </button>
-                <a
-                  href={resumeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-line px-3 py-1.5 text-sm text-muted transition-colors hover:text-fg"
-                >
-                  <ExternalLink className="size-4" />
-                  <span className="hidden sm:inline">Open</span>
-                </a>
-                <a
-                  href={resumeUrl}
-                  download={resumeFilename}
-                  className="inline-flex items-center gap-1.5 rounded-lg bg-fg px-3 py-1.5 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
-                >
-                  <Download className="size-4" />
-                  Download
-                </a>
-              </div>
-            </div>
-
-            {/* desktop preview */}
-            <div className="hidden bg-surface-2 p-4 md:block">
-              <iframe
-                title={`${profile.name} — Résumé`}
-                src={`${resumeUrl}#toolbar=0&navpanes=0&view=FitH`}
-                className="mx-auto aspect-[1/1.414] w-full max-w-2xl rounded-lg border border-line bg-white"
-              />
-            </div>
-
-            {/* mobile fallback (mobile browsers rarely render PDF inline) */}
-            <div className="flex flex-col items-center gap-3 p-10 text-center md:hidden">
-              <span className="grid size-12 place-items-center rounded-xl bg-accent/15 text-accent">
-                <FileText className="size-6" />
-              </span>
-              <p className="text-sm text-muted">
-                Open or download the PDF to view it on mobile.
-              </p>
-            </div>
-          </div>
+        {/* Desktop preview only. Mobile browsers rarely render PDFs inline. */}
+        <Reveal delay={0.08} className="hidden md:block">
+          <iframe
+            title={`${profile.name} Résumé`}
+            src={`${resumeUrl}#toolbar=0&navpanes=0&view=FitH`}
+            className="mx-auto aspect-[1/1.414] w-full max-w-xl rounded-card border border-line-strong bg-white"
+          />
         </Reveal>
       </div>
 
-      {/* fullscreen modal */}
       {open && (
-        <div className="fixed inset-0 z-[60] flex flex-col bg-bg/95 backdrop-blur">
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Résumé full screen"
+          className="fixed inset-0 z-50 flex flex-col bg-bg"
+        >
           <div className="flex items-center justify-between border-b border-line px-5 py-3">
-            <span className="inline-flex items-center gap-2 font-mono text-xs text-subtle">
-              <FileText className="size-4 text-accent" />
-              {profile.name} — Résumé
-            </span>
+            <span className="font-mono text-xs text-subtle">{resumeFilename}</span>
             <div className="flex items-center gap-2">
-              <a
-                href={resumeUrl}
-                download={resumeFilename}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-fg px-3 py-1.5 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
-              >
+              <a href={resumeUrl} download={resumeFilename} className={btnSolid}>
                 <Download className="size-4" />
-                Download
+                Download PDF
               </a>
               <button
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close"
-                className="grid size-9 place-items-center rounded-lg border border-line text-muted transition-colors hover:text-fg"
+                className="grid size-11 place-items-center rounded-full border border-line-strong text-fg transition-colors hover:bg-surface-2"
               >
                 <X className="size-5" />
               </button>
             </div>
           </div>
           <iframe
-            title={`${profile.name} — Résumé (full screen)`}
+            title={`${profile.name} Résumé (full screen)`}
             src={`${resumeUrl}#view=FitH`}
             className="min-h-0 flex-1 bg-white"
           />

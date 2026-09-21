@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { profile } from "@/lib/content";
 
-export const alt = `${profile.name} — ${profile.role}`;
+export const alt = `${profile.name} | ${profile.role}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -15,9 +15,7 @@ export default function OG() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#08090d",
-          backgroundImage:
-            "radial-gradient(600px circle at 80% -10%, rgba(124,108,255,0.35), transparent 60%), radial-gradient(500px circle at 0% 110%, rgba(34,211,238,0.18), transparent 55%)",
+          background: "#0d0e10",
           padding: 72,
           color: "white",
           fontFamily: "sans-serif",
@@ -29,8 +27,8 @@ export default function OG() {
               width: 64,
               height: 64,
               borderRadius: 16,
-              border: "1.5px solid rgba(124,108,255,0.6)",
-              background: "#0f1117",
+              border: "1.5px solid rgba(255,138,76,0.6)",
+              background: "#141518",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -39,12 +37,12 @@ export default function OG() {
             <svg width="36" height="36" viewBox="0 0 64 64" fill="none">
               <path
                 d="M18 48 32 16 46 48"
-                stroke="#a99bff"
+                stroke="#ff8a4c"
                 strokeWidth="6"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-              <path d="M25 35 H39" stroke="#a99bff" strokeWidth="6" strokeLinecap="round" />
+              <path d="M25 35 H39" stroke="#ff8a4c" strokeWidth="6" strokeLinecap="round" />
             </svg>
           </div>
           <div style={{ fontSize: 26, color: "rgba(255,255,255,0.7)" }}>
@@ -53,7 +51,7 @@ export default function OG() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 30, color: "#9b8dff", fontWeight: 600 }}>
+          <div style={{ fontSize: 30, color: "#ff8a4c", fontWeight: 600 }}>
             {profile.roleLong}
           </div>
           <div
@@ -76,7 +74,7 @@ export default function OG() {
               maxWidth: 900,
             }}
           >
-            Flutter · Android · iOS · Kotlin Multiplatform — based in Jakarta.
+            Flutter, Android, iOS and Kotlin Multiplatform. Based in Jakarta.
           </div>
         </div>
       </div>

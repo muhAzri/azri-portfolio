@@ -4,71 +4,48 @@ import { GitHubIcon, LinkedInIcon, GooglePlayIcon } from "./icons";
 import { profile, socials } from "@/lib/content";
 
 const links = [
-  { label: "Email", value: profile.email, href: socials.email, icon: Mail },
-  { label: "GitHub", value: "github.com/muhAzri", href: socials.github, icon: GitHubIcon },
-  {
-    label: "LinkedIn",
-    value: "in/muhammad-azri...",
-    href: socials.linkedin,
-    icon: LinkedInIcon,
-  },
-  {
-    label: "Google Play",
-    value: "Zrif Apps",
-    href: socials.googlePlay,
-    icon: GooglePlayIcon,
-  },
+  { label: "GitHub", href: socials.github, icon: GitHubIcon },
+  { label: "LinkedIn", href: socials.linkedin, icon: LinkedInIcon },
+  { label: "Google Play", href: socials.googlePlay, icon: GooglePlayIcon },
 ];
 
 export function Contact() {
   return (
-    <section id="contact" className="relative overflow-hidden">
-      <div className="aurora pointer-events-none left-1/2 top-0 size-[28rem] -translate-x-1/2 bg-accent/30" />
-      <div className="relative mx-auto max-w-6xl px-5 py-28">
-        <Reveal className="text-center">
-          <p className="font-mono text-xs uppercase tracking-[0.25em] text-accent">
-            Contact
-          </p>
-          <h2 className="mx-auto mt-4 max-w-3xl text-4xl font-bold tracking-tight text-fg sm:text-5xl">
-            Let&apos;s build something{" "}
-            <span className="text-gradient">people actually ship</span>.
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-lg text-muted">
-            Open to mobile engineering roles and freelance work. The fastest way
-            to reach me is email.
-          </p>
-          <a
-            href={socials.email}
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-fg px-6 py-3.5 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
-          >
-            <Mail className="size-4" />
-            Say hello
-          </a>
-        </Reveal>
+    <section id="contact" className="mx-auto max-w-6xl px-5 py-28 md:py-40">
+      <Reveal>
+        <h2 className="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-tighter text-fg sm:text-6xl md:text-8xl">
+          Have a mobile project in mind?
+        </h2>
+        <p className="mt-8 max-w-[52ch] text-lg leading-relaxed text-muted md:text-xl">
+          Open to mobile engineering roles and freelance work. Email is the fastest way to
+          reach me.
+        </p>
 
-        <Reveal delay={0.12}>
-          <div className="mx-auto mt-14 grid max-w-3xl gap-3 sm:grid-cols-2">
-            {links.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-4 rounded-xl border border-line bg-surface px-5 py-4 card-hover"
-              >
-                <span className="grid size-10 place-items-center rounded-lg bg-surface-2 text-muted transition-colors group-hover:text-fg">
-                  <l.icon className="size-5" />
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="text-xs text-subtle">{l.label}</p>
-                  <p className="truncate text-sm font-medium text-fg">{l.value}</p>
-                </div>
-                <ArrowUpRight className="size-4 text-subtle transition-colors group-hover:text-fg" />
-              </a>
-            ))}
-          </div>
-        </Reveal>
-      </div>
+        <a
+          href={socials.email}
+          className="group mt-10 inline-flex max-w-full items-center gap-3 rounded-full bg-accent-solid px-6 py-4 text-base font-semibold text-on-accent transition-transform duration-200 hover:-translate-y-px active:scale-[0.98] sm:px-8 sm:py-5 sm:text-2xl"
+        >
+          <Mail className="size-5 shrink-0 sm:size-6" />
+          <span className="truncate">{profile.email}</span>
+          <ArrowUpRight className="size-5 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 sm:size-6" />
+        </a>
+      </Reveal>
+
+      <Reveal delay={0.1} className="mt-16 flex flex-wrap items-center gap-3">
+        {links.map((l) => (
+          <a
+            key={l.label}
+            href={l.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 rounded-full border border-line-strong px-5 py-3 text-sm font-semibold text-fg transition-colors hover:bg-surface-2 active:scale-[0.98]"
+          >
+            <l.icon className="size-[18px]" />
+            {l.label}
+          </a>
+        ))}
+        <span className="px-2 text-sm text-subtle">{profile.location}</span>
+      </Reveal>
     </section>
   );
 }

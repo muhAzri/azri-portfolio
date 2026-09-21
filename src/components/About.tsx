@@ -5,30 +5,30 @@ import { highlights, profile } from "@/lib/content";
 
 export function About() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-5 py-24">
-      <SectionHeading eyebrow="About" title="Mobile-first, shipping-focused" />
-      <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr]">
-        <Reveal>
-          <p className="text-lg leading-relaxed text-muted">{profile.summary}</p>
-          <p className="mt-5 leading-relaxed text-muted">
-            I care about clean architecture, idiomatic platform code, and apps
-            that survive contact with real users — whether that&apos;s a
-            multi-role banking flow, an NFC/BLE access-control bridge, or a
-            local-first utility that respects privacy.
+    <section id="about" className="mx-auto max-w-6xl px-5 py-24 md:py-32">
+      <SectionHeading title="Mobile-first, shipping-focused" />
+
+      <div className="mt-12 grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <Reveal className="lg:col-span-8">
+          <p className="text-xl leading-snug tracking-tight text-fg md:text-2xl">
+            {profile.summary}
+          </p>
+          <p className="mt-6 max-w-[65ch] leading-relaxed text-muted">
+            I care about clean architecture and idiomatic platform code, and I
+            build native Android and iOS apps with MVVM. Past work includes multi-role banking flows, an NFC/BLE access-control
+            bridge, and a local-first utility that keeps user data on the
+            device.
           </p>
         </Reveal>
 
-        <Reveal delay={0.1}>
-          <ul className="grid gap-3">
+        <Reveal delay={0.1} className="lg:col-span-4">
+          <ul className="grid gap-4">
             {highlights.map((h) => (
-              <li
-                key={h}
-                className="flex items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3.5"
-              >
-                <span className="grid size-6 shrink-0 place-items-center rounded-md bg-accent/15 text-accent">
-                  <Check className="size-3.5" strokeWidth={3} />
+              <li key={h} className="flex items-start gap-3 text-sm leading-relaxed text-fg">
+                <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-accent-solid text-on-accent">
+                  <Check className="size-3" strokeWidth={3} />
                 </span>
-                <span className="text-sm font-medium text-fg">{h}</span>
+                {h}
               </li>
             ))}
           </ul>

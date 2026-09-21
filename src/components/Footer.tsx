@@ -8,9 +8,7 @@ export function Footer() {
         <p>
           © {year} {profile.name}
         </p>
-        <p className="font-mono text-xs">
-          Built with Next.js · Tailwind · Motion
-        </p>
+        <p className="font-mono text-xs">Built with Next.js, Tailwind and Motion</p>
       </div>
     </footer>
   );

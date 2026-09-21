@@ -6,16 +6,16 @@ import "./globals.css";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-const title = `${profile.name} — ${profile.role}`;
+const title = `${profile.name} | ${profile.role}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: title,
-    template: `%s · ${profile.shortName}`,
+    template: `%s | ${profile.shortName}`,
   },
   description: profile.summary,
-  applicationName: `${profile.shortName} — Portfolio`,
+  applicationName: `${profile.shortName} Portfolio`,
   authors: [{ name: profile.name, url: socials.github }],
   creator: profile.name,
   keywords: [
@@ -49,8 +49,11 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#08090d",
-  colorScheme: "dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f4f4f6" },
+    { media: "(prefers-color-scheme: dark)", color: "#0d0e10" },
+  ],
+  colorScheme: "light dark",
 };
 
 const jsonLd = {
@@ -77,14 +80,21 @@ const jsonLd = {
   ],
 };
 
+// Runs before first paint so the saved theme never flashes the wrong colors.
+const themeScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`;
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="min-h-dvh">
         <script
           type="application/ld+json"
