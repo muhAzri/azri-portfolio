@@ -4,7 +4,7 @@ import { SectionHeading } from "./SectionHeading";
 import { projects, type Project } from "@/lib/content";
 
 /**
- * Bento, 6-col grid, exactly 5 cells: [4 + 2] then [2 + 2 + 2].
+ * Bento, 6-col grid, exactly 6 cells: [4 + 2], [2 + 4], then [3 + 3].
  * Cell tone gives real visual variation: accent fill, inverted, dotted, plain surface.
  */
 const cells = [
@@ -36,7 +36,7 @@ const cells = [
     big: false,
   },
   {
-    span: "md:col-span-2",
+    span: "md:col-span-4",
     card: "border border-line-strong bg-surface bg-dots",
     title: "text-fg",
     body: "text-muted",
@@ -45,7 +45,16 @@ const cells = [
     big: false,
   },
   {
-    span: "md:col-span-2",
+    span: "md:col-span-3",
+    card: "border border-line-strong bg-surface",
+    title: "text-fg",
+    body: "text-muted",
+    chip: "border-line-strong text-muted",
+    link: "text-accent",
+    big: false,
+  },
+  {
+    span: "md:col-span-3",
     card: "border border-line-strong bg-surface-2",
     title: "text-fg",
     body: "text-muted",
@@ -60,7 +69,7 @@ export function Projects() {
     <section id="projects" className="mx-auto max-w-6xl px-5 py-24 md:py-32">
       <SectionHeading
         title="Things I've built"
-        blurb="An award-winning learning platform, open-source iOS work, and privacy-first utilities on Google Play."
+        blurb="An award-winning learning platform, open-source iOS apps, and privacy-first utilities on Google Play."
       />
       <div className="mt-14 grid gap-4 md:grid-cols-6">
         {projects.slice(0, cells.length).map((p, i) => (

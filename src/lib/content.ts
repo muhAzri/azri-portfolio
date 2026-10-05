@@ -179,6 +179,15 @@ export const projects: Project[] = [
     hrefLabel: "View on GitHub",
   },
   {
+    name: "Jejak",
+    blurb:
+      "Native iOS run & walk tracker that records route, distance, pace and elevation entirely on-device. Noisy GPS goes through a Kalman filter with outlier gating and stop detection. Built with Clean Architecture, Swinject DI, Swift Testing, and adaptive layouts for foldables.",
+    badge: "Open Source",
+    tags: ["Swift", "SwiftUI", "MapKit", "Core Location", "Swinject"],
+    href: "https://github.com/muhAzri/Jejak",
+    hrefLabel: "View on GitHub",
+  },
+  {
     name: "CashFlow",
     blurb:
       "Offline-first personal finance manager with BLoC, multi-currency (7 currencies), encrypted local storage, budget alerts, and an analytics dashboard. Zero-backend, privacy-first architecture.",
